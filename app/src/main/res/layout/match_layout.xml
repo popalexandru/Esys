@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="5dp"
+    android:layout_margin="8dp"
+    android:focusable="true"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blec"
+        android:id="@+id/cardid"
+        android:visibility="visible">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/champImage"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_champ_name"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/champLevel"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/round_cor"
+            android:text="200"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/champImage"
+            app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/champImage"
+            app:layout_constraintEnd_toStartOf="@+id/champImage"
+            app:layout_constraintHorizontal_bias="0.91"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/champImage">
+
+            <ImageView
+                android:id="@+id/spell1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="1dp"
+                android:src="@drawable/spell11" />
+
+            <ImageView
+                android:id="@+id/spell2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="1dp"
+                android:src="@drawable/spell12" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/champImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toEndOf="@+id/champImage"
+            app:layout_constraintTop_toTopOf="@+id/champImage">
+
+            <ImageView
+                android:id="@+id/rune1"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_margin="2dp"
+
+                android:src="@drawable/electrocute_rune" />
+
+            <ImageView
+                android:id="@+id/rune2"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_margin="2dp"
+                android:src="@drawable/conqueror_rune" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="3dp"
+            android:id="@+id/layout_items"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/dividers"
+            app:layout_constraintLeft_toLeftOf="@id/dividers"
+            app:layout_constraintRight_toRightOf="@id/dividers"
+            >
+
+            <ImageView
+                android:id="@+id/item0"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/layout_bkg_edit_text"
+                android:layout_margin="2dp"/>
+
+            <ImageView
+                android:id="@+id/item1"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/layout_bkg_edit_text"
+                android:layout_margin="2dp"/>
+
+            <ImageView
+                android:id="@+id/item2"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/layout_bkg_edit_text"
+                android:layout_margin="2dp"/>
+
+            <ImageView
+                android:id="@+id/item3"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/layout_bkg_edit_text"
+                android:layout_margin="2dp"/>
+
+            <ImageView
+                android:id="@+id/item4"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/layout_bkg_edit_text"
+                android:layout_margin="2dp"/>
+
+            <ImageView
+                android:id="@+id/item5"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/layout_bkg_edit_text"
+                android:layout_margin="2dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/GameType"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Ranked"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_items" />
+
+        <TextView
+            android:id="@+id/GameDuration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="10m"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toRightOf="@id/GameType"
+            app:layout_constraintTop_toBottomOf="@+id/layout_items"
+            android:gravity="center"
+            app:layout_constraintRight_toLeftOf="@id/gameTime"/>
+
+        <TextView
+            android:id="@+id/gameTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Ranked"
+            android:layout_marginTop="5dp"
+            android:gravity="right"
+            android:layout_marginRight="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toBottomOf="@+id/layout_items" />
+
+        <View
+            android:id="@+id/dividers"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_margin="8dp"
+            android:background="#B7515151"
+            app:layout_constraintEnd_toEndOf="@+id/creepScore"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/champLevel" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/dividers"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/kills"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:text="10"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/slash1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:layout_toRightOf="@+id/layourSpells"
+                android:text="/"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/deaths"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:layout_toRightOf="@+id/layourSpells"
+                android:text="0"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/slash2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:layout_toRightOf="@+id/layourSpells"
+                android:text="/"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/assists"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:layout_toRightOf="@+id/layourSpells"
+                android:text="7"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/kda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:gravity="center"
+            android:textColor="#BFFFFFFF"
+            android:textSize="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/champImage"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+        <TextView
+            android:id="@+id/text_view_champ_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12m 30s"
+            android:textColor="#BFFFFFFF"
+            android:textSize="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/damages"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.37"
+            app:layout_constraintStart_toEndOf="@+id/linearLayout3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/minions"
+            app:layout_constraintBottom_toTopOf="@+id/layout_items"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/wards"
+            app:layout_constraintBottom_toTopOf="@+id/layout_items"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/damageDealt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="403k"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.36"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/wardScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="33"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.36"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+        <TextView
+            android:id="@+id/creepScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11231"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.35"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="51dp" />
+
+        <View
+            android:id="@+id/separator_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#DF4C4C4C"
+            android:layout_marginTop="4dp"
+            android:alpha="0.8"
+            app:layout_constraintTop_toBottomOf="@+id/GameType"
+            android:padding="3dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.cardview.widget.CardView>

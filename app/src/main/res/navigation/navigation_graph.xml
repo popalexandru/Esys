@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.leagueapp.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_summonerFragment"
+            app:destination="@id/summonerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade__out_scale_down"
+            app:popEnterAnim="@anim/fade_in_scale_up"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_mainFragment_to_jungleTimerFragment"
+            app:destination="@id/jungleTimerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/summonerFragment"
+        android:name="com.example.leagueapp.ui.main.SummonerFragment"
+        android:label="SummonerFragment">
+
+        <action
+            android:id="@+id/action_summonerFragment_to_mainFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_summonerFragment_to_matchWholeViewer"
+            app:destination="@id/matchWholeViewer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/matchViewFragment"
+        android:name="com.example.leagueapp.ui.main.MatchParticipantsFragment"
+        android:label="MatchViewFragment" />
+    <fragment
+        android:id="@+id/damageToChampionsFragment"
+        android:name="com.example.leagueapp.ui.main.DamageToChampionsFragment"
+        android:label="DamageToChampionsFragment" />
+    <fragment
+        android:id="@+id/matchWholeViewer"
+        android:name="com.example.leagueapp.ui.main.MatchWholeViewer"
+        android:label="MatchWholeViewer" >
+        <action
+            android:id="@+id/action_matchWholeViewer_to_summonerFragment"
+            app:destination="@id/summonerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/jungleTimerFragment"
+        android:name="com.example.leagueapp.ui.main.JungleTimerFragment"
+        android:label="JungleTimerFragment" />
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.leagueapp.ui.main.NewsFragment"
+        android:label="NewsFragment" />
+
+
+</navigation>

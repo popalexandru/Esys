@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#8F7C1E</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blackos">#272727</color>
+    <color name="verdiut">#F736452B</color>
+    <color name="blecInchis">#202020</color>
+    <color name="blec">#222222</color>
+    <color name="blackos2">#292929</color>
+    <color name="griInchis">#EB0E1317</color>
+    <color name="griInchisDeschis">#EB20282E</color>
+    <color name="cevaGri">#EB2C363E</color>
+    <color name="greos">#EB363737</color>
+    <color name="background">#dddddd</color>
+    <color name="textGri">#cccccc</color>
+    <color name="playerBackground">#7E3322</color>
+    <color name="galban">#987304</color>
+    <color name="blecsav">#222222</color>
+    <color name="yellow">#A5992E</color>
+    <color name="colorGrey">#dddddd</color>
+    <color name="cyan">#16A7B5</color>
+</resources>

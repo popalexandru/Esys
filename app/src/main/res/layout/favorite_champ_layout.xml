@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="25dp"
+    android:layout_margin="25dp"
+    app:cardCornerRadius="8dp"
+    app:cardBackgroundColor="@color/blec"
+    android:focusable="true"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:background="#f2f4f6"
+    android:id="@+id/cardView"
+    app:cardElevation="5dp">
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/progress"
+        android:visibility="gone"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:indeterminate="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="3dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/champImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/notranked1"
+            android:layout_alignParentStart="true"/>
+
+        <TextView
+            android:id="@+id/summonerName"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:text="nume"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/textGri"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/champImage"
+            android:layout_centerVertical="true"
+            android:layout_margin="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/region"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_margin="10dp"
+            android:layout_toLeftOf="@id/delete"
+            android:layout_centerVertical="true"/>
+
+        <ImageView
+            android:id="@+id/delete"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/ic_clear"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:alpha="0.85"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

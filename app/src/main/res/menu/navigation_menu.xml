@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText">
+
+<group android:checkableBehavior="single">
+    <item
+        android:icon="@drawable/ic_baseline_home_24"
+        android:id="@+id/home"
+        android:title="Home" />
+
+    <item
+        android:icon="@drawable/ic_baseline_wallpaper_24"
+        android:id="@+id/news"
+        android:title="News" />
+
+    <item
+        android:icon="@drawable/ic_baseline_timelapse_24"
+        android:id="@+id/jungleTimer"
+        android:title="Jungle Timer" />
+
+    <item
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:id="@+id/settings"
+        android:title="Settings" />
+
+    <item
+        android:icon="@drawable/ic_baseline_info_24"
+        android:id="@+id/about"
+        android:title="About" />
+</group>
+</menu>

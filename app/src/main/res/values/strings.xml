@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">LeagueApp</string>
+    <string name="Idle">search</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+
+    <string-array name="regions">
+        <item>BR1</item>
+        <item>EUN1</item>
+        <item>EUW1</item>
+        <item>JP1</item>
+        <item>KR</item>
+        <item>LA1</item>
+        <item>LA2</item>
+        <item>NA1</item>
+        <item>OC1</item>
+        <item>RU</item>
+        <item>TR1</item>
+    </string-array>
+</resources>

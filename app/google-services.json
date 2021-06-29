@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "758118076244",
+    "project_id": "leagueapp-2b454",
+    "storage_bucket": "leagueapp-2b454.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:758118076244:android:3e2b1f37acf9e662c202c1",
+        "android_client_info": {
+          "package_name": "com.example.leagueapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "758118076244-2ks59p1g0qqcn3401s9jhd2e4g0fn7qt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.leagueapp",
+            "certificate_hash": "3dc264f161595919da85fdfcbb01562816cd11d3"
+          }
+        },
+        {
+          "client_id": "758118076244-2t6hr4mntq8elf4c6e8g703m6spm1891.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsglI1cnrpn41G-pCK6RFRGAdBwN3x4Wc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "758118076244-2t6hr4mntq8elf4c6e8g703m6spm1891.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

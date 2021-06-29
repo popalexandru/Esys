@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:keepScreenOn="true"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp">
+
+            <androidx.cardview.widget.CardView
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/redCardView"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:elevation="8dp"
+                android:layout_margin="5dp"
+                app:cardElevation="5dp"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <FrameLayout
+                    android:id="@+id/redFrameLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/redImage"
+                        android:layout_width="200dp"
+                        android:layout_height="140dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/red" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="200dp"
+                        android:layout_height="140dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Red"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="3"
+                            android:elevation="3dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:textColor="@color/textGri"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:background="@drawable/gradient"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:id="@+id/redCounter"
+                            android:text=""
+                            android:textSize="25sp"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="10"
+                            android:elevation="6dp"
+                            android:textColor="@color/white"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </FrameLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:clickable="true"
+                android:focusable="true"
+                android:id="@+id/blueCardView"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:elevation="8dp"
+                android:layout_margin="5dp"
+                app:cardElevation="5dp"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/blueImage"
+                        android:layout_width="200dp"
+                        android:layout_height="140dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/blue" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="200dp"
+                        android:layout_height="140dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/campName"
+                            android:text="Blue"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="3"
+                            android:elevation="3dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:textColor="@color/textGri"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:background="@drawable/gradient"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:id="@+id/blueCounter"
+                            android:text=""
+                            android:textSize="25sp"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="10"
+                            android:elevation="6dp"
+                            android:textColor="@color/white"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </FrameLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/dragonCardView"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:elevation="8dp"
+                android:layout_margin="5dp"
+                app:cardElevation="5dp"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#CB1A242E"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/dragonImage"
+                        android:layout_width="200dp"
+                        android:layout_height="140dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/dragon" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="200dp"
+                        android:layout_height="140dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dragon"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="3"
+                            android:elevation="3dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:textColor="@color/textGri"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:background="@drawable/gradient"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:id="@+id/dragonCounter"
+                            android:text=""
+                            android:visibility="invisible"
+                            android:textSize="25sp"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="10"
+                            android:elevation="6dp"
+                            android:textColor="@color/white"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </FrameLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/baronCardView"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:elevation="8dp"
+                android:layout_margin="5dp"
+                app:cardElevation="5dp"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/baronImage"
+                        android:layout_width="200dp"
+                        android:layout_height="140dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/baron" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="200dp"
+                        android:layout_height="140dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Baron"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="3"
+                            android:elevation="3dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:textColor="@color/textGri"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:background="@drawable/gradient"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:id="@+id/baronCounter"
+                            android:text=""
+                            android:textSize="25sp"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:visibility="invisible"
+                            android:shadowRadius="10"
+                            android:elevation="6dp"
+                            android:textColor="@color/white"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </FrameLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/raptorsCardView"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:elevation="8dp"
+                android:layout_margin="5dp"
+                app:cardElevation="5dp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/raptorsImage"
+                        android:layout_width="200dp"
+                        android:layout_height="70dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/raptors" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="200dp"
+                        android:layout_height="70dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Raptors"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="3"
+                            android:elevation="3dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:textColor="@color/textGri"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:background="@drawable/gradient"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:id="@+id/raptorsCounter"
+                            android:text=""
+                            android:visibility="invisible"
+                            android:textSize="20sp"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="10"
+                            android:elevation="6dp"
+                            android:textColor="@color/white"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </FrameLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/wolvesCardView"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:elevation="8dp"
+                android:layout_margin="5dp"
+                app:cardElevation="5dp"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/wolvesImage"
+                        android:layout_width="200dp"
+                        android:layout_height="70dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/wolves" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="200dp"
+                        android:layout_height="70dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Wolves"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="3"
+                            android:elevation="3dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:textColor="@color/textGri"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:background="@drawable/gradient"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:id="@+id/wolvesCounter"
+                            android:text=""
+                            android:visibility="invisible"
+                            android:textSize="20sp"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="10"
+                            android:elevation="6dp"
+                            android:textColor="@color/white"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </FrameLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/krugsCardView"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:elevation="8dp"
+                android:layout_margin="5dp"
+                app:cardElevation="5dp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/krugsImage"
+                        android:layout_width="200dp"
+                        android:layout_height="70dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/krugs" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="200dp"
+                        android:layout_height="70dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Krugs"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="3"
+                            android:elevation="3dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:textColor="@color/textGri"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:background="@drawable/gradient"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:id="@+id/krugsCounter"
+                            android:text=""
+                            android:visibility="invisible"
+                            android:textSize="20sp"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="10"
+                            android:elevation="6dp"
+                            android:textColor="@color/white"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </FrameLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+
+                android:id="@+id/grompCardView"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:elevation="8dp"
+                android:layout_margin="5dp"
+                app:cardElevation="5dp"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/grompImage"
+                        android:layout_width="200dp"
+                        android:layout_height="70dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/gromp" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="200dp"
+                        android:layout_height="70dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gromp"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="3"
+                            android:elevation="3dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:textColor="@color/textGri"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:background="@drawable/gradient"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:id="@+id/grompCounter"
+                            android:text=""
+                            android:visibility="invisible"
+                            android:textSize="20sp"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="10"
+                            android:elevation="6dp"
+                            android:textColor="@color/white"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </FrameLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/scutter1CardView"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:elevation="8dp"
+                android:layout_margin="5dp"
+                app:cardElevation="5dp"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/sc1Image"
+                        android:layout_width="200dp"
+                        android:layout_height="70dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/scutter" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="200dp"
+                        android:layout_height="70dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Scutter I"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="3"
+                            android:elevation="3dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:textColor="@color/textGri"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:background="@drawable/gradient"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:id="@+id/scutterCounter1"
+                            android:visibility="invisible"
+                            android:text=""
+                            android:textSize="20sp"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="10"
+                            android:elevation="6dp"
+                            android:textColor="@color/white"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </FrameLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/scutter2CardView"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="8dp"
+                android:elevation="8dp"
+                android:layout_margin="5dp"
+                app:cardElevation="5dp"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/sc2Image"
+                        android:layout_width="200dp"
+                        android:layout_height="70dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/scutter" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="200dp"
+                        android:layout_height="70dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Scutter II"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="3"
+                            android:elevation="3dp"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:textColor="@color/textGri"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            android:background="@drawable/gradient"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_bold"
+                            android:id="@+id/scuttercounter2"
+                            android:text=""
+                            android:visibility="invisible"
+                            android:textSize="20sp"
+                            android:shadowColor="#000000"
+                            android:shadowDx="0"
+                            android:shadowDy="0"
+                            android:shadowRadius="10"
+                            android:elevation="6dp"
+                            android:textColor="@color/white"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </FrameLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/ad_frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+    </LinearLayout>
+
+
+</ScrollView>
