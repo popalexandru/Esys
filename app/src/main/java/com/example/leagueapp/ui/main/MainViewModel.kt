@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.leagueapp.database.FavoriteItem
 import com.example.leagueapp.database.SearchItem
 import com.example.leagueapp.datastore.PreferencesManager
+import com.example.leagueapp.models.ChampionData
 import com.example.leagueapp.networking.model.Utils.APIResponse.NOT_FOUND
 import com.example.leagueapp.networking.model.Utils.APIResponse.OK
 import com.example.leagueapp.networking.model.Utils.APIResponse.FORBIDDEN
@@ -45,6 +46,8 @@ class MainViewModel
 
     val searchQuery = MutableStateFlow("")
     val summonerExists = MutableStateFlow(false)
+
+    val champExchange = MutableStateFlow(ChampionData())
 
     val preferencesFlow = preferencesManager.regionFlow
     val isAlarmScheduled = preferencesManager.alarmFlow

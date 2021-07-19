@@ -59,6 +59,22 @@
         android:id="@+id/newsFragment"
         android:name="com.example.leagueapp.ui.main.NewsFragment"
         android:label="NewsFragment" />
+    <fragment
+        android:id="@+id/buildsFragment"
+        android:name="com.example.leagueapp.ui.main.BuildsFragment"
+        android:label="BuildsFragment" >
+        <action
+            android:id="@+id/action_buildsFragment_to_buildViewFragment"
+            app:destination="@id/buildViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/fade__out_scale_down"
+            app:popEnterAnim="@anim/fade_in_scale_up"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/buildViewFragment"
+        android:name="com.example.leagueapp.ui.main.BuildViewFragment"
+        android:label="BuildViewFragment" />
 
 
 </navigation>

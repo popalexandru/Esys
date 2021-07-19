@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.home -> navController.navigate(R.id.homeFragment)
                 R.id.jungleTimer -> navController.navigate(R.id.jungleTimerFragment)
                 R.id.news -> navController.navigate(R.id.newsFragment)
+                R.id.builds -> navController.navigate(R.id.buildsFragment)
             }
 
             it.setChecked(true)

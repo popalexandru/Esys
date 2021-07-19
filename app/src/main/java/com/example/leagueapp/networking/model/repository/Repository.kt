@@ -1,17 +1,16 @@
 package com.example.leagueapp.networking.model.repository
 
-import android.util.Log
 import com.example.leagueapp.database.FavoriteDAO
 import com.example.leagueapp.database.FavoriteItem
 import com.example.leagueapp.database.SearchDAO
 import com.example.leagueapp.database.SearchItem
-import com.example.leagueapp.networking.model.Utils.Platform
 import com.example.leagueapp.networking.model.api.RetrofitInstance
+import com.example.leagueapp.networking.model.api.RiotApi
 import com.example.leagueapp.networking.model.models.*
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
@@ -66,20 +65,78 @@ class Repository @Inject constructor(
                 match.loadDetails()
                 list.add(match)
 
-                //addMatchToFirebase(match)
+                addMatchToFirebase(match, region)
             }
     }
 
-/*    fun addMatchToFirebase(match: Match){
-
-        firebase.collection("EUNE").document("Games").collection(match.gameId.toString()).add(match)
+    fun addMatchToFirebase(match: Match, region: String){
+        firebase.collection("Data").document(region).collection("Games").document(match.gameId.toString()).set(match)
             .addOnFailureListener {
                 Timber.e("Inserting ${match.gameId} failed: ${it.message}")
             }
             .addOnCanceledListener {
                 Timber.d("Inserting ${match.gameId.toString()} canceled")
             }
-    }*/
+
+        for(participant in match.participants){
+            val participantTeam = participant.teamId
+            var win = 0;
+
+            if(match.teams[0].win == "Win" && (participantTeam == match.teams[0].teamId)) win = 1
+
+            val runes = hashMapOf(
+                "primaryStyle" to participant.stats.perkPrimaryStyle,
+                "subStyle" to participant.stats.perkSubStyle,
+                "perk0" to participant.stats.perk0,
+                "perk1" to participant.stats.perk1,
+                "perk2" to participant.stats.perk2,
+                "perk3" to participant.stats.perk3,
+                "perk4" to participant.stats.perk4,
+                "perk5" to participant.stats.perk5,
+                "counter" to 1,
+                "wins" to win
+            )
+
+            val runesName = participant.stats.perk0.toString() +
+             participant.stats.perk1.toString() +
+             participant.stats.perk2.toString() +
+             participant.stats.perk3.toString() +
+             participant.stats.perk4.toString() +
+             participant.stats.perk5.toString()
+
+            Timber.d("Naming of namin ${participant.championName} which is ${participant.championId}")
+
+            firebase.collection("Data").document("Runes").collection(participant.championId.toString()).document(runesName).get()
+                .addOnCompleteListener {
+                    if(it.isSuccessful){
+                        val document = it.result
+
+                        if (document != null) {
+                            if(document.exists()){
+                                Timber.d("document $runesName existed")
+
+                                firebase.collection("Data").document("Runes").collection(participant.championId.toString()).document(runesName)
+                                    .update("counter", FieldValue.increment(1))
+
+                                if(win == 1){
+                                    firebase.collection("Data").document("Runes").collection(participant.championId.toString()).document(runesName)
+                                        .update("wins", FieldValue.increment(1))
+                                }
+                            }else{
+                                Timber.d("document $runesName DID NOT exist")
+
+                                firebase.collection("Data").document("Runes").collection(participant.championId.toString())
+                                    .document(runesName).set(runes)
+                            }
+                        }
+                    }
+                }
+
+        }
+
+    }
+
+
 
     suspend fun getMatchListV4(accountId: String, region : String) : List<MatchReference>?{
         val reply =  RetrofitInstance.apige.getMatchListV4(region, accountId, "matchList")
@@ -179,4 +236,5 @@ class Repository @Inject constructor(
     fun deleteSearcg(searchItem: SearchItem) = CoroutineScope(Dispatchers.IO).launch {
         searchesDao.deleteSearch(searchItem)
     }
+
 }

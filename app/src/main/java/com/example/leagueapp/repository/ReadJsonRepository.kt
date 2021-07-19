@@ -13,15 +13,17 @@ import kotlinx.coroutines.launch
 import okhttp3.OkHttpClient
 import org.json.JSONArray
 import org.json.JSONObject
+import timber.log.Timber
 import java.net.URL
 import java.util.*
 import kotlin.collections.ArrayList
 
 object ReadJsonRepository{
-    val championFullURL = "https://ddragon.leagueoflegends.com/cdn/10.16.1/data/en_US/championFull.json"
-    val summonerFullURL = "https://ddragon.leagueoflegends.com/cdn/10.16.1/data/en_US/summoner.json"
-    val runesFullURL = "https://ddragon.leagueoflegends.com/cdn/10.16.1/data/en_US/runesReforged.json"
-    val spellsFullURL = "https://ddragon.leagueoflegends.com/cdn/10.16.1/img/sprite/spell0.png"
+    val PATCH = "11.14.1"
+    val championFullURL = "https://ddragon.leagueoflegends.com/cdn/${PATCH}/data/en_US/championFull.json"
+    val summonerFullURL = "https://ddragon.leagueoflegends.com/cdn/${PATCH}/data/en_US/summoner.json"
+    val runesFullURL = "https://ddragon.leagueoflegends.com/cdn/${PATCH}/data/en_US/runesReforged.json"
+    val spellsFullURL = "https://ddragon.leagueoflegends.com/cdn/${PATCH}/img/sprite/spell0.png"
     val newsURL = "https://lolstatic-a.akamaihd.net/frontpage/apps/prod/harbinger-l10-website/en-us/production/en-us/page-data/news/game-updates/page-data.json"
 
     var jsonsRead = false
@@ -44,11 +46,14 @@ object ReadJsonRepository{
             val dataIterator : Iterator<String> = dataField.keys()
 
             while(dataIterator.hasNext()){
-
+                /* get champ object */
                 val currentChamp = dataField.getJSONObject(dataIterator.next())
+
                 val tags = currentChamp.getJSONArray("tags")
                 val spells = currentChamp.getJSONArray("spells")
                 val passive = currentChamp.getJSONObject("passive")
+                val protips = currentChamp.getJSONArray("allytips")
+                val contips = currentChamp.getJSONArray("enemytips")
 
                 var tagsString : String = ""
 
@@ -60,12 +65,15 @@ object ReadJsonRepository{
                     currentChamp.getString("key"),
                     currentChamp.getString("id"),
                     currentChamp.getString("title"),
-                    currentChamp.getString("tags"),
-                    getSillsFromJSON(spells, passive), null, null, null))
+                    tagsString,
+                    getSillsFromJSON(spells, passive),
+                    null,
+                    null,
+                    null,
+                    getListFromArray(protips),
+                    getListFromArray(contips)))
             }
             jsonsRead = true
-
-            println("champions read")
         }
 
         CoroutineScope(IO).launch {
@@ -145,8 +153,8 @@ object ReadJsonRepository{
         var name : String = "N/A"
 
         for(champ in championsData){
-            if(champ.keyIn == id){
-                return champ.idIn
+            if(champ.key == id){
+                return champ.id
             }
         }
 
@@ -169,12 +177,33 @@ object ReadJsonRepository{
         return skillsName
     }
 
+    private fun getListFromArray(array: JSONArray): List<String>{
+        val returnList = mutableListOf<String>()
+
+        for(index in 0..(array.length()-1)){
+            val currentTip = array.get(index) as String
+            returnList.add(currentTip)
+
+            Timber.d("tiptip $currentTip")
+        }
+
+        return returnList
+    }
+
     fun getRuneById(id : Int) : String{
         for(rune in runesData){
             if(rune.id == id)
                 return rune.downloadPath
         }
 
+        return ""
+    }
+
+    fun getRuneNameById(id: Int): String{
+        for(rune in runesData){
+            if(rune.id == id)
+                return rune.name
+        }
         return ""
     }
 

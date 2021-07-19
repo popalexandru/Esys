@@ -26,6 +26,11 @@
 
     <item
         android:icon="@drawable/ic_baseline_info_24"
+        android:id="@+id/builds"
+        android:title="Builds" />
+
+    <item
+        android:icon="@drawable/ic_baseline_info_24"
         android:id="@+id/about"
         android:title="About" />
 </group>

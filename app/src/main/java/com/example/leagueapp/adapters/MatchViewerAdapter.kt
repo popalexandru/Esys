@@ -80,8 +80,8 @@ class MatchViewerAdapter(private val listener : onClicked) : ListAdapter<PlayerO
                     separator.setBackgroundColor(Color.MAGENTA)
                 }
 
-                rune1.load(ReadJsonRepository.getRuneById(participantStats.perkPrimaryStyle))
-                rune2.load(ReadJsonRepository.getRuneById(participantStats.perkSubStyle))
+/*                rune1.load(ReadJsonRepository.getRuneById(participantStats.perkPrimaryStyle))
+                rune2.load(ReadJsonRepository.getRuneById(participantStats.perkSubStyle))*/
 
                 separator.visibility = View.GONE
 

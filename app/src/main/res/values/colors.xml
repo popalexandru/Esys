@@ -24,4 +24,6 @@
     <color name="yellow">#A5992E</color>
     <color name="colorGrey">#dddddd</color>
     <color name="cyan">#16A7B5</color>
+    <color name="bestcolor">#F00D0F12</color>
+    <color name="bestcolordesc">#0D0F12</color>
 </resources>

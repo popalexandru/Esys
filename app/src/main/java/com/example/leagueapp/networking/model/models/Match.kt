@@ -1,5 +1,6 @@
 package com.example.leagueapp.networking.model.models
 
+import com.example.leagueapp.repository.ReadJsonRepository
 import timber.log.Timber
 import java.io.Serializable
 import java.util.concurrent.TimeUnit
@@ -30,6 +31,10 @@ data class Match(
     fun loadDetails(){
         val durationInMinutes = TimeUnit.SECONDS.toMinutes(gameDuration)
         val secondsRemained = gameDuration - TimeUnit.MINUTES.toSeconds(durationInMinutes)
+
+        for(p in participants){
+            p.championName = ReadJsonRepository.getChampNameById(p.championId.toString())
+        }
 
         if(durationInMinutes < 5){
             isRemake = true

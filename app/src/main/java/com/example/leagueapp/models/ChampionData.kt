@@ -1,12 +1,18 @@
 package com.example.leagueapp.models
 
-class ChampionData(
-    key: String, id: String, title: String, tags: String, skillList: MutableList<String>, startItems: List<String>?,
-    recommendedItems: List<String>?, situationalItems: List<String>?){
+import java.io.Serializable
 
-    var keyIn  = key
-    var idIn = id
-    var skills = skillList
-    var titles = title
-
-}
+data class ChampionData(
+    val key : String,
+    val id : String,
+    val title : String,
+    val tags : String,
+    val skillList: MutableList<String>,
+    val startItems: List<String>?,
+    val recommendedItems: List<String>?,
+    val situationalItems: List<String>?,
+    val proTipsList : List<String>,
+    val conTipsList : List<String>
+    ) : Serializable{
+    constructor() : this("", "", "", "", mutableListOf(), emptyList(), emptyList(), emptyList(), emptyList(), emptyList())
+    }

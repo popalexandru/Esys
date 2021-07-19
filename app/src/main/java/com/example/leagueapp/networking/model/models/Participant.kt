@@ -14,7 +14,7 @@ data class Participant(
         val baronKills : Int = 0,
         val bountyLevel : Int = 0,
         val champExperience : Int = 0,
-        val championName : String = "",
+        var championName : String = "",
         val championTransform : Int = 0,
         val consumablesPurchased : Int = 0,
         val itemsPurchased : Int = 0,
