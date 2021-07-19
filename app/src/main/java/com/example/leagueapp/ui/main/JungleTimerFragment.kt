@@ -438,6 +438,14 @@ class JungleTimerFragment() : Fragment() {
                     Toast.LENGTH_SHORT
                 ).show()
             }
+
+            override fun onAdLoaded() {
+                binding.adFrame.apply {
+                    alpha = 0f
+                    //visibility = VISIBLE
+                    animate().alpha(1f).setDuration(400).setListener(null)
+                }
+            }
         }).build()
 
         adLoader.loadAds(AdRequest.Builder().build(), 3)

@@ -13,6 +13,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
@@ -185,7 +186,10 @@ class MainFragment : Fragment(), FavoritesAdapter.onDeleteClick {
             if(summonerInputName.isNotEmpty()){
                 if(binding.autocomplete.text.toString().equals("Region"))
                 {
-                    binding.regionLayout.error = "Choose your region"
+                    binding.apply {
+                        regionLayout.error = "Choose your region"
+                        favoriteProgress.visibility = GONE
+                    }
                 }else{
                     binding.getButton.startAnimation()
                     viewModel.getSummoner(summonerInputName, binding.autocomplete.text.toString().toLowerCase())
@@ -208,9 +212,12 @@ class MainFragment : Fragment(), FavoritesAdapter.onDeleteClick {
                 }
 
                 is Error -> {
-                    binding.getButton.clearAnimation()
-                    binding.nameInputLayout.error = state.exception
-                    binding.getButton.revertAnimation()
+                    binding.apply {
+                        favoriteProgress.visibility = GONE
+                        getButton.revertAnimation()
+                        nameInputLayout.error = state.exception
+                        getButton.clearAnimation()
+                    }
                 }
 
                 is Empty -> {
@@ -258,6 +265,7 @@ class MainFragment : Fragment(), FavoritesAdapter.onDeleteClick {
 
     override fun onSummonerClicked(item: FavoriteItem) {
         hideKeyboard()
+        binding.nameInput.error = null
         val summonerInputName = item.name
 
         if(summonerInputName.isNotEmpty()){
@@ -298,6 +306,14 @@ class MainFragment : Fragment(), FavoritesAdapter.onDeleteClick {
                     requireContext(), "Failed to load native ad with error $error",
                     Toast.LENGTH_SHORT
                 ).show()
+            }
+
+            override fun onAdLoaded() {
+                binding.adFrame.apply {
+                    alpha = 0f
+                    //visibility = VISIBLE
+                    animate().alpha(1f).setDuration(400).setListener(null)
+                }
             }
         }).build()
 

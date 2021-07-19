@@ -6,8 +6,8 @@
     android:elevation="8dp"
     android:layout_margin="3dp"
     app:cardElevation="5dp"
+    android:hapticFeedbackEnabled="true"
     android:layout_height="wrap_content"
-    app:cardBackgroundColor="#CB1A242E"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <FrameLayout

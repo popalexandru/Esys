@@ -98,6 +98,7 @@
 
     <FrameLayout
         android:id="@+id/ad_frame"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp" />
